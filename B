@@ -14,13 +14,79 @@ Date,Temperature
 2026-01-13,36
 2026-01-14,35
 
+------------------------------------------
 #Load Weather Data#
 import pandas as pd
 data = pd.read_csv("weather_data.csv")
 print("\nWEATHER DATA")
 print(data)
 
+-------------------------------------------
 #Compute Mean Temperature #
 mean_temp = data["Temperature"].mean()
 print("\nMean Temperature:")
 print(f"{mean_temp:.2f} °C")
+
+-------------------------------------------
+hottest = data.loc[data["Temperature"].idxmax()]
+coldest = data.loc[data["Temperature"].idxmin()]
+
+print("\nHottest day: ")
+print(f"date: {hottest['Date']}")
+print(f"Temperature: {hottest['Temperature']} °C")
+
+print("\nColdest Day:")
+print(f"Date: {coldest['Date']}")
+print(f"Temperature: {coldest['Temperature']} °C")
+
+-------------------------------------------
+
+#Create Temperature Trend Graph#
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+plt.figure(figsize=(10,5))
+plt.plot(data["Date"], data["Temperature"], marker='o')
+plt.title("Temperature Trend")
+plt.xlabel("Date")
+plt.ylabel("Temperature (°C)")
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+
+-------------------------------------------
+
+#Simple Linear Regression#
+# Convert dates into numerical values#
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
+data["Day_Number"] = np.arange(len(data))
+
+X = data[["Day_Number"]]
+y = data["Temperature"]
+
+model = LinearRegression()
+model.fit(X, y)
+
+--------------------------------------------
+
+# STEP 6: PREDICT NEXT 7 DAYS
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+future_days = pd.DataFrame(np.arange(len(data), len(data)+7), columns=["Day_Number"])
+
+predictions = model.predict(future_days)
+
+print("\nPredicted Temperatures for Next 7 Days")
+
+for i, temp in enumerate(predictions, start=1):
+    print(f"Day +{i}: {temp:.2f} °C")
+
+
+
+
