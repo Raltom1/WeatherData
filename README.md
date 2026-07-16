@@ -64,15 +64,6 @@ print(f"{mean_temp:.2f} °C")
 
 ---
 
-### Cell 3 — Summary Statistics
-```python
-#Analyze Weather Data#
-print("\nSummary Statistics:")
-print(data["Temperature"].describe())
-```
-
----
-
 ### Cell 4 — Hottest and Coldest Day
 ```python
 hottest = data.loc[data["Temperature"].idxmax()]
