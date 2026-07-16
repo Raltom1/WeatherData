@@ -150,7 +150,7 @@ plt.show()
 
 **Problema:** `NameError: name 'data' is not defined`
 **Dahilan:** Hindi mo pa na-run yung Cell 1 (Load Weather Data) sa kasalukuyang session.
-**Solusyon:** Click **Kernel → Restart Kernel and Run All Cells...** — ito ay awtomatikong magru-run ng lahat ng cells mula taas hanggang baba, sunod-sunod.
+**Solusyon:** Click **Kernel → Restart Kernel and Run All Cells...**  ito ay auto magru-run ng lahat ng cells mula taas hanggang baba, sunod-sunod.
 
 **Problema:** `UserWarning: X does not have valid feature names...` (sa Cell 6)
 **Dahilan:** Warning lang ito, hindi error — gumana pa rin nang tama ang code.
