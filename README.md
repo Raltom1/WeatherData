@@ -1,9 +1,5 @@
 # Weather Data Analysis — README (CSE413)
 
-Sundan mo lang nang sunod-sunod. Bawat step, meron dapat mangyari bago ka pumunta sa susunod.
-
----
-
 ## STEP 1: Gumawa ng weather_data.csv
 
 1. Buksan mo ang **Jupyter** (o kahit anong file manager sa loob ng Jupyter).
