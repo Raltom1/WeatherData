@@ -88,5 +88,38 @@ for i, temp in enumerate(predictions, start=1):
     print(f"Day +{i}: {temp:.2f} °C")
 
 
+# ==================================================
+# STEP 7: VISUALIZE ACTUAL VS PREDICTED
+# ==================================================
+
+plt.figure(figsize=(10,5))
+
+plt.scatter(
+    data["Day_Number"],
+    data["Temperature"],
+    label="Actual Data"
+)
+
+plt.plot(
+    data["Day_Number"],
+    model.predict(X),
+    linewidth=2,
+    label="Regression Line"
+)
+
+plt.scatter(
+    future_days,
+    predictions,
+    marker='x',
+    s=100,
+    label="Future Predictions"
+)
+
+plt.title("Weather Forecast using Linear Regression")
+plt.xlabel("Day Number")
+plt.ylabel("Temperature (°C)")
+plt.legend()
+plt.grid(True)
+plt.show()
 
 
