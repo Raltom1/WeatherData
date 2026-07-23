@@ -140,3 +140,18 @@ growth_rate = float(input("Enter annual growth rate (%): "))
 growth_rate = growth_rate / 100
 
 years = int(input("Enter number of years to simulate: "))
+
+# ------------------------------------------------------------
+# INITIALIZE VARIABLES
+# ------------------------------------------------------------
+
+population = initial_population
+
+year_list = [0]
+population_list = [population]
+
+print("\nPopulation Growth Simulation")
+print("-" * 45)
+print(f"{'Year':<10}{'Population'}")
+print("-" * 45)
+print(f"{0:<10}{population:,.0f}")
