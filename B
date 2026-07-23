@@ -122,4 +122,21 @@ plt.legend()
 plt.grid(True)
 plt.show()
 
+# ============================================================
+# Population Growth Simulation
+# Computational Science Laboratory Activity
+# ============================================================
 
+import matplotlib.pyplot as plt
+
+# ------------------------------------------------------------
+# USER INPUT
+# ------------------------------------------------------------
+
+initial_population = int(input("Enter the initial population: "))
+growth_rate = float(input("Enter annual growth rate (%): "))
+
+# Convert percentage to decimal
+growth_rate = growth_rate / 100
+
+years = int(input("Enter number of years to simulate: "))
